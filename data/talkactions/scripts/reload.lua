@@ -1,60 +1,40 @@
-function onSay(cid, words, param)
-	if getPlayerFlagValue(cid, PLAYERFLAG_CANRELOADCONTENT) == false then
-		return true
-	end
+	--  Made by oTibia.pl --
+local reload = {
+	{RELOAD_TYPE_ACTIONS, "actions", "action", "act"},
+	{RELOAD_TYPE_MONSTERS, "monsters", "monster", "mon"},
+	{RELOAD_TYPE_NPCS, "npcs", "npc"},
+	{RELOAD_TYPE_CONFIG, "config", "conf"},
+	{RELOAD_TYPE_TALKACTIONS, "talkactions", "talkaction", "talk"},
+	{RELOAD_TYPE_MOVEMENTS, "movements", "movement", "move"},
+	{RELOAD_TYPE_SPELLS, "spells", "spell"},
+	{RELOAD_TYPE_RAIDS, "raids", "raid"},
+	{RELOAD_TYPE_CREATURESCRIPTS, "creaturescripts", "creaturescript", "crea"},
+	{RELOAD_TYPE_OUTFITS, "outfits", "outfit", "out"},
+	{RELOAD_TYPE_MOUNTS, "mounts", "mount", "mou"},
+	{RELOAD_TYPE_ITEMS, "items", "item"},
+	{RELOAD_TYPE_GLOBALEVENTS, "globalevents", "globalevent", "glo"} --,
+--	{RELOAD_TYPE_ALL, "all"} //@@ TODO
+}
 
-	if param == "" then
-		doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "You need to type the parameter.")
+function onSay(cid, words, param)
+	if (getPlayerFlagValue(cid, PLAYERFLAG_CANRELOADCONTENT) == false) then
+		doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "You don\'t have permissions to do that.")
 		return false
 	end
 
-	if param == "actions" or param == "action" then
-		doReloadInfo(RELOAD_TYPE_ACTIONS)
-		param = "actions"
-	elseif param == "monsters" or param == "monster" then
-		doReloadInfo(RELOAD_TYPE_MONSTERS)
-		param = "monsters"
-	elseif param == "npcs" or param == "npc" then
-		doReloadInfo(RELOAD_TYPE_NPCS)
-		param = "npcs"
-	elseif param == "config" then
-		doReloadInfo(RELOAD_TYPE_CONFIG)
-	elseif param == "talkactions" or param == "talkaction" or param == "ta" or param == "talk" then
-		doReloadInfo(RELOAD_TYPE_TALKACTIONS)
-		param = "talkactions"
-	elseif param == "movements" or param == "movement" or param == "move" then
-		doReloadInfo(RELOAD_TYPE_MOVEMENTS)
-		param = "movements"
-	elseif param == "spells" or param == "spell" then
-		doReloadInfo(RELOAD_TYPE_SPELLS)
-		param = "spells"
-	elseif param == "raids" or param == "raid" then
-		doReloadInfo(RELOAD_TYPE_RAIDS)
-		param = "raids"
-	elseif param == "creaturescripts" or param == "creaturescript" or param == "cs" then
-		doReloadInfo(RELOAD_TYPE_CREATURESCRIPTS)
-		param = "creaturescripts"
-	elseif param == "outfits" or param == "outfit" then
-		doReloadInfo(RELOAD_TYPE_OUTFITS)
-		param = "outfits"
-	elseif param == "mounts" or param == "mount" then
-		doReloadInfo(RELOAD_TYPE_MOUNTS)
-		param = "mounts"
-	elseif param == "items" or param == "item" then
-		doReloadInfo(RELOAD_TYPE_ITEMS)
-		param = "items"
-	elseif param == "globalevent" or param == "globalevents" then
-		doReloadInfo(RELOAD_TYPE_GLOBALEVENTS)
-		param = "globalevents"
-	else
-		param = ""
+	param = param:lower()
+	for _, o in ipairs(reload) do
+		if (param == o) then
+			doReloadInfo(o[1], cid)
+			found = o[2]
+			break
+		end
 	end
 
-	if param == "" then
-		doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Invalid parameter.")
+	if (param == "" or not found) then
+		doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "You need to type a good parameter: \"actions\", \"monsters\", \"npcs\", \"config\", \"talkactions\", \"movements\", \"spells\", \"raids\", \"creaturescripts\", \"outfits\", \"mounts\", \"items\", \"globalevents\", \"all\", .")
 	else
-		doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Reloaded " .. param .. ".")
+		doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Reloaded ".. found ..".")
 	end
-
-	return false
+return true
 end
