@@ -1,7 +1,3 @@
--------- config.lua --------
--- Config file for OTServ --
-----------------------------
-
 -- data directory location
 datadir = "data/"
 
@@ -23,7 +19,7 @@ mapkind = "OTBM"
 servername = "OTServ"
 
 -- server location
-location = "Germany"
+location = "Poland"
 
 -- server ip (the ip that server listens on)
 ip = "127.0.0.1"
@@ -46,16 +42,16 @@ status_port = "7171"
 admin_port = "7171"
 
 -- server url
-url = "http://otfans.net"
+url = "http://otibia.pl"
 
 -- server owner name
-ownername = "Tliff"
+ownername = "oTibia"
 
 -- server owner email
-owneremail = "otserv@tibia.de"
+owneremail = "@otibia.pl"
 
 -- world name
-worldname = "OpenTibia"
+worldname = "oTibia"
 
 -- world type
 -- options: openpvp/pvp, optionalpvp/no-pvp, hardcorepvp/pvp-enforced
@@ -330,11 +326,11 @@ lua_excepted_type_errors_enabled = false
 guild_wars_end_only_on_startup = true
 
 -- motd (the message box that you sometimes get before you choose characters)
-motd = "Welcome to OTServ 0.6.3!"
+motd = "Welcome to oTibia 0.5!"
 motdnum = "1"
 
 -- login message
-loginmsg = "Welcome to OTServ 0.6.3. For help visit http://otfans.net."
+loginmsg = "Welcome to oTibia Server. For help visit http://otibia.pl"
 
 -- how many logins attempts until ip is temporary disabled
 -- set to 0 to disable
@@ -388,16 +384,15 @@ show_house_prices = false
 
 -- SQL type
 -- options: mysql, sqlite, odbc or pgsql
-sql_type = "sqlite"
+sql_type = "mysql"
 
 -- SQL connection part
 sql_db   = "db.s3db"
---  "otserv" -- use this for MySQL/PgSQL
---  "Your Source" -- ODBC
 
 -- Additional connection settings for mysql, pgsql and odbc
 sql_host = "127.0.0.1"
 sql_port = 3306
+
 -- 5432 -- use this port for PgSQL
 sql_user = "root"
 sql_pass = ""
