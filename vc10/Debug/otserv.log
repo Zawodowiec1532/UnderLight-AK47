@@ -1,0 +1,11 @@
+﻿Build started 9/7/2013 7:40:19 PM.
+     1>Project "C:\Users\ZawodowieC\Desktop\oTibia\OTServ\vc10\otserv.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /MP /Od /Oy- /D __USE_OTPCH__ /D __USE_MYSQL__ /D __USE_SQLITE__ /D __OLD_GUILD_SYSTEM__ /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"otpch.h" /Fp"Debug\otservd.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\otpch.cpp
+         otpch.cpp
+     1>c:\users\zawodowiec\desktop\otibia\otserv\otpch.h(17): fatal error C1083: Cannot open include file: 'libxml/xmlmemory.h': No such file or directory
+     1>Done Building Project "C:\Users\ZawodowieC\Desktop\oTibia\OTServ\vc10\otserv.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.35

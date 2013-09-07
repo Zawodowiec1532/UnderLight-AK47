@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4D5DA80E-5B33-4DD8-B277-5D74C032CDC6}</ProjectGuid>
+    <RootNamespace>otserv</RootNamespace>
+    <ProjectName>otserv</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>
+    </CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(BOOST_INCLUDE_PATH);$(LIBXML_INCLUDE_PATH);$(MYSQL_INCLUDE_PATH);$(LUA_INCLUDE_PATH);$(MPIR_INCLUDE_PATH);$(LIBICONV_INCLUDE_PATH);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\boost32;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\liblua51\lib;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\zlib-1.2.5\lib;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\openssl-0.9.8k\lib;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\LuaJIT-2.0.0-beta9\lib;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\libxml2-2.7.8\lib;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\libiconv-1.14\lib;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\boost-1.51\lib;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\mpir-2.5.0\lib;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\boost-1.51\lib64;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\mysql-connector-c-6.0.2\lib;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\mysql-connector-c++-1.1.0\lib;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\sqlite3-3.7.7.1\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <TargetName>$(ProjectName)d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\boost32;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\liblua51\lib;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\zlib-1.2.5\lib;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\openssl-0.9.8k\lib;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\LuaJIT-2.0.0-beta9\lib;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\libxml2-2.7.8\lib;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\libiconv-1.14\lib;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\boost-1.51\lib;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\mpir-2.5.0\lib;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\boost-1.51\lib64;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\mysql-connector-c-6.0.2\lib;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\mysql-connector-c++-1.1.0\lib;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\sqlite3-3.7.7.1\lib;$(LibraryPath)</LibraryPath>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>__USE_OTPCH__;__USE_MYSQL__;__USE_SQLITE__;__OLD_GUILD_SYSTEM__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>otpch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\Microsoft Visual Studio 11.0\ots\libiconv-1.14\include;C:\Program Files (x86)\Microsoft Visual Studio 11.0\ots\boost-1.51\include;C:\Program Files (x86)\Microsoft Visual Studio 11.0\ots\zlib-1.2.5\include;C:\Program Files (x86)\Microsoft Visual Studio 11.0\ots\sqlite3-3.7.7.1\include;C:\Program Files (x86)\Microsoft Visual Studio 11.0\ots\postgresql-9.1.2-1\include;C:\Program Files (x86)\Microsoft Visual Studio 11.0\ots\openssl-0.9.8k\include;C:\Program Files (x86)\Microsoft Visual Studio 11.0\ots\mpir-2.5.0\include;C:\Program Files (x86)\Microsoft Visual Studio 11.0\ots\LuaJIT-2.0.0-beta9\include;C:\Program Files (x86)\Microsoft Visual Studio 11.0\ots\libxml2-2.7.8\include;C:\Program Files (x86)\Microsoft Visual Studio 11.0\ots\liblua51\include;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\mysql-connector-c++-1.1.0\include;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\mysql-connector-c-6.0.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>lua5.1.lib;libmysql.lib;mpir.lib;libxml2_debug.lib;dbghelp.lib;sqlite.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>
+      </FunctionLevelLinking>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;$(PREPROCESSOR_DEFS);__USE_OTPCH__;__USE_MYSQL__;__USE_SQLITE__;__OLD_GUILD_SYSTEM__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>otpch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\Microsoft Visual Studio 11.0\ots\libiconv-1.14\include;C:\Program Files (x86)\Microsoft Visual Studio 11.0\ots\boost-1.51\include;C:\Program Files (x86)\Microsoft Visual Studio 11.0\ots\zlib-1.2.5\include;C:\Program Files (x86)\Microsoft Visual Studio 11.0\ots\sqlite3-3.7.7.1\include;C:\Program Files (x86)\Microsoft Visual Studio 11.0\ots\postgresql-9.1.2-1\include;C:\Program Files (x86)\Microsoft Visual Studio 11.0\ots\openssl-0.9.8k\include;C:\Program Files (x86)\Microsoft Visual Studio 11.0\ots\mpir-2.5.0\include;C:\Program Files (x86)\Microsoft Visual Studio 11.0\ots\LuaJIT-2.0.0-beta9\include;C:\Program Files (x86)\Microsoft Visual Studio 11.0\ots\libxml2-2.7.8\include;C:\Program Files (x86)\Microsoft Visual Studio 11.0\ots\liblua51\include;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\mysql-connector-c++-1.1.0\include;C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\mysql-connector-c-6.0.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <AdditionalOptions>/I"C:\Users\ZawodowieC\boost-1.54\include" /I"C:\Users\ZawodowieC\liblua51\include" /I"C:\Users\ZawodowieC\libxml2-2.7.8\include" /I"C:\Users\ZawodowieC\libiconv-1.14\include" /I"C:\Users\ZawodowieC\mpir-2.5.0\include" /I"C:\Users\ZawodowieC\sqlite3-3.7.7.1\include" /I"C:\Users\ZawodowieC\mysql-connector-c-6.1.1\include" /I"C:\Users\ZawodowieC\openssl-0.9.8k\include" /I"C:\Users\ZawodowieC\postgresql-9.1.2-1\include" %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);$(TFS_LIBDEPS)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <SubSystem>Console</SubSystem>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <AdditionalLibraryDirectories>C:\Program Files %28x86%29\Microsoft Visual Studio 11.0\ots\liblua51\lib;$(TFS_LIBS)</AdditionalLibraryDirectories>
+      <AdditionalOptions>/DYNAMICBASE  "lua51.lib" "libxml2.lib" "mpir.lib" "sqlite.lib" "iconv.lib" "libmysql.lib" "libeay32.lib" "dbghelp.lib" /LIBPATH:"C:\Users\ZawodowieC\boost-1.54\lib" /LIBPATH:"C:\Users\ZawodowieC\liblua51\lib" /LIBPATH:"C:\Users\ZawodowieC\libxml2-2.7.8\lib" /LIBPATH:"C:\Users\ZawodowieC\libiconv-1.14\lib" /LIBPATH:"C:\Users\ZawodowieC\mpir-2.5.0\lib" /LIBPATH:"C:\Users\ZawodowieC\sqlite3-3.7.7.1\lib" /LIBPATH:"C:\Users\ZawodowieC\mysql-connector-c-6.1.1\lib" /LIBPATH:"C:\Users\ZawodowieC\openssl-0.9.8k\lib" /LIBPATH:"C:\Users\ZawodowieC\postgresql-9.1.2-1\lib" /TLBID:1 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\account.h" />
+    <ClInclude Include="..\actions.h" />
+    <ClInclude Include="..\admin.h" />
+    <ClInclude Include="..\allocator.h" />
+    <ClInclude Include="..\ban.h" />
+    <ClInclude Include="..\baseevents.h" />
+    <ClInclude Include="..\beds.h" />
+    <ClInclude Include="..\chat.h" />
+    <ClInclude Include="..\combat.h" />
+    <ClInclude Include="..\compiler\cygwin.h" />
+    <ClInclude Include="..\compiler\gcc.h" />
+    <ClInclude Include="..\compiler\mingw32.h" />
+    <ClInclude Include="..\compiler\msvc.h" />
+    <ClInclude Include="..\compiler\workarounds.h" />
+    <ClInclude Include="..\condition.h" />
+    <ClInclude Include="..\configmanager.h" />
+    <ClInclude Include="..\connection.h" />
+    <ClInclude Include="..\const.h" />
+    <ClInclude Include="..\container.h" />
+    <ClInclude Include="..\creature.h" />
+    <ClInclude Include="..\creatureevent.h" />
+    <ClInclude Include="..\cylinder.h" />
+    <ClInclude Include="..\database.h" />
+    <ClInclude Include="..\databasemysql.h" />
+    <ClInclude Include="..\databaseodbc.h" />
+    <ClInclude Include="..\databasepgsql.h" />
+    <ClInclude Include="..\databasesqlite.h" />
+    <ClInclude Include="..\definitions.h" />
+    <ClInclude Include="..\depot.h" />
+    <ClInclude Include="..\enums.h" />
+    <ClInclude Include="..\exception.h" />
+    <ClInclude Include="..\fileloader.h" />
+    <ClInclude Include="..\game.h" />
+    <ClInclude Include="..\globalevent.h" />
+    <ClInclude Include="..\guild.h" />
+    <ClInclude Include="..\house.h" />
+    <ClInclude Include="..\housetile.h" />
+    <ClInclude Include="..\ioaccount.h" />
+    <ClInclude Include="..\iomap.h" />
+    <ClInclude Include="..\iomapotbm.h" />
+    <ClInclude Include="..\iomapserialize.h" />
+    <ClInclude Include="..\ioplayer.h" />
+    <ClInclude Include="..\item.h" />
+    <ClInclude Include="..\itemloader.h" />
+    <ClInclude Include="..\items.h" />
+    <ClInclude Include="..\logger.h" />
+    <ClInclude Include="..\luascript.h" />
+    <ClInclude Include="..\mailbox.h" />
+    <ClInclude Include="..\map.h" />
+    <ClInclude Include="..\md5.h" />
+    <ClInclude Include="..\monster.h" />
+    <ClInclude Include="..\monsters.h" />
+    <ClInclude Include="..\movement.h" />
+    <ClInclude Include="..\networkmessage.h" />
+    <ClInclude Include="..\npc.h" />
+    <ClInclude Include="..\otpch.h" />
+    <ClInclude Include="..\otsystem.h" />
+    <ClInclude Include="..\outfit.h" />
+    <ClInclude Include="..\outputmessage.h" />
+    <ClInclude Include="..\party.h" />
+    <ClInclude Include="..\player.h" />
+    <ClInclude Include="..\position.h" />
+    <ClInclude Include="..\protocol.h" />
+    <ClInclude Include="..\protocolgame.h" />
+    <ClInclude Include="..\protocollogin.h" />
+    <ClInclude Include="..\protocolold.h" />
+    <ClInclude Include="..\quests.h" />
+    <ClInclude Include="..\raids.h" />
+    <ClInclude Include="..\rsa.h" />
+    <ClInclude Include="..\scheduler.h" />
+    <ClInclude Include="..\scriptmanager.h" />
+    <ClInclude Include="..\server.h" />
+    <ClInclude Include="..\sha1.h" />
+    <ClInclude Include="..\spawn.h" />
+    <ClInclude Include="..\spells.h" />
+    <ClInclude Include="..\status.h" />
+    <ClInclude Include="..\talkaction.h" />
+    <ClInclude Include="..\tasks.h" />
+    <ClInclude Include="..\teleport.h" />
+    <ClInclude Include="..\templates.h" />
+    <ClInclude Include="..\thing.h" />
+    <ClInclude Include="..\tile.h" />
+    <ClInclude Include="..\tools.h" />
+    <ClInclude Include="..\town.h" />
+    <ClInclude Include="..\trashholder.h" />
+    <ClInclude Include="..\vocation.h" />
+    <ClInclude Include="..\waitlist.h" />
+    <ClInclude Include="..\waypoints.h" />
+    <ClInclude Include="..\weapons.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\actions.cpp" />
+    <ClCompile Include="..\admin.cpp" />
+    <ClCompile Include="..\allocator.cpp" />
+    <ClCompile Include="..\ban.cpp" />
+    <ClCompile Include="..\baseevents.cpp" />
+    <ClCompile Include="..\beds.cpp" />
+    <ClCompile Include="..\chat.cpp" />
+    <ClCompile Include="..\combat.cpp" />
+    <ClCompile Include="..\condition.cpp" />
+    <ClCompile Include="..\configmanager.cpp" />
+    <ClCompile Include="..\connection.cpp" />
+    <ClCompile Include="..\container.cpp" />
+    <ClCompile Include="..\creature.cpp" />
+    <ClCompile Include="..\creatureevent.cpp" />
+    <ClCompile Include="..\cylinder.cpp" />
+    <ClCompile Include="..\database.cpp" />
+    <ClCompile Include="..\databasemysql.cpp" />
+    <ClCompile Include="..\databaseodbc.cpp" />
+    <ClCompile Include="..\databasepgsql.cpp" />
+    <ClCompile Include="..\databasesqlite.cpp" />
+    <ClCompile Include="..\depot.cpp" />
+    <ClCompile Include="..\exception.cpp" />
+    <ClCompile Include="..\fileloader.cpp" />
+    <ClCompile Include="..\game.cpp" />
+    <ClCompile Include="..\globalevent.cpp" />
+    <ClCompile Include="..\guild.cpp" />
+    <ClCompile Include="..\house.cpp" />
+    <ClCompile Include="..\housetile.cpp" />
+    <ClCompile Include="..\ioaccount.cpp" />
+    <ClCompile Include="..\iomapotbm.cpp" />
+    <ClCompile Include="..\iomapserialize.cpp" />
+    <ClCompile Include="..\ioplayer.cpp" />
+    <ClCompile Include="..\item.cpp" />
+    <ClCompile Include="..\items.cpp" />
+    <ClCompile Include="..\logger.cpp" />
+    <ClCompile Include="..\luascript.cpp" />
+    <ClCompile Include="..\mailbox.cpp" />
+    <ClCompile Include="..\map.cpp" />
+    <ClCompile Include="..\md5.cpp" />
+    <ClCompile Include="..\monster.cpp" />
+    <ClCompile Include="..\monsters.cpp" />
+    <ClCompile Include="..\movement.cpp" />
+    <ClCompile Include="..\networkmessage.cpp" />
+    <ClCompile Include="..\npc.cpp" />
+    <ClCompile Include="..\otpch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\otserv.cpp" />
+    <ClCompile Include="..\outfit.cpp" />
+    <ClCompile Include="..\outputmessage.cpp" />
+    <ClCompile Include="..\party.cpp" />
+    <ClCompile Include="..\player.cpp" />
+    <ClCompile Include="..\position.cpp" />
+    <ClCompile Include="..\protocol.cpp" />
+    <ClCompile Include="..\protocolgame.cpp" />
+    <ClCompile Include="..\protocollogin.cpp" />
+    <ClCompile Include="..\protocolold.cpp" />
+    <ClCompile Include="..\quests.cpp" />
+    <ClCompile Include="..\raids.cpp" />
+    <ClCompile Include="..\rsa.cpp" />
+    <ClCompile Include="..\scheduler.cpp" />
+    <ClCompile Include="..\scriptmanager.cpp" />
+    <ClCompile Include="..\server.cpp" />
+    <ClCompile Include="..\sha1.cpp" />
+    <ClCompile Include="..\spawn.cpp" />
+    <ClCompile Include="..\spells.cpp" />
+    <ClCompile Include="..\status.cpp" />
+    <ClCompile Include="..\talkaction.cpp" />
+    <ClCompile Include="..\tasks.cpp" />
+    <ClCompile Include="..\teleport.cpp" />
+    <ClCompile Include="..\thing.cpp" />
+    <ClCompile Include="..\tile.cpp" />
+    <ClCompile Include="..\tools.cpp" />
+    <ClCompile Include="..\trashholder.cpp" />
+    <ClCompile Include="..\vocation.cpp" />
+    <ClCompile Include="..\waitlist.cpp" />
+    <ClCompile Include="..\weapons.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="otserv.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
